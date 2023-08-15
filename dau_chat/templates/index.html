@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dau_chat</title>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: -90px 0 0 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #logo-image {
+        cursor: pointer;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      input[type="text"] {
+        width: 500px;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: rgb(99, 99, 99);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #result {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .logo_img {
+        width: 270px;
+        height: 130px;
+      }
+      .teamlogo {
+        width: 180px;
+        height: 80px;
+        position: absolute;
+        bottom: 80px;
+        right: 200px;
+        margin: 0;
+        padding: 10px;
+        background-color: white;
+        border-top: 1px solid #ffffff00;
+        border-left: 1px solid #ffffff00;
+      }
+      .add-info-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: rgb(99, 99, 99);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .add-info-button:hover {
+        background-color: rgb(37, 37, 37);
+      }
+      input[type="submit"]:hover {
+        background-color: rgb(37, 37, 37);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">
+      <img
+        class="logo_img"
+        src="{{ url_for('static', filename = 'img/dauchat_logo.jpg')}}"
+      />
+    </a>
+    <a class="add-info-button" href="/add_info">정보 추가하기</a>
+    <form action="/ask" method="post">
+      <input type="text" name="query" placeholder="검색어를 입력해 주세요." />
+      <input type="submit" value="Ask" />
+    </form>
+    <div id="result">
+      <h3>Result</h3>
+      <p>{{ result }}</p>
+    </div>
+
+    <img
+      class="teamlogo"
+      src="{{ url_for('static', filename = 'img/teamname_logo.jpg')}}"
+    />
+  </body>
+</html>

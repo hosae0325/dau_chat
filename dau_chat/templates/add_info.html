@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Save Data to File</title>
+    <style>
+      body {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: rgb(99, 99, 99);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: rgb(37, 37, 37);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/save_to_file" method="post">
+      <h2>ADD INFORMATION</h2>
+      <textarea name="data" rows="4" cols="50"></textarea>
+      <br />
+      <input type="submit" value="Save to File" />
+    </form>
+  </body>
+</html>
